@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: petstore
+  name: test23
   labels:
-    app: petstore
+    app: test23
     kubernetes.azure.com/generator: devhub
-  namespace: petstore
+  namespace: namespace-workflow-1717751054721
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: petstore
+      app: test23
   template:
     metadata:
       labels:
-        app: petstore
+        app: test23
     spec:
       containers:
-        - name: petstore
-          image: petstoredemo.azurecr.io/image-workflow-1717569602767:latest
+        - name: test23
+          image: acrworkflow1717751054721.azurecr.io/image-workflow-1717751054721:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 3002
+            - containerPort: 8000
